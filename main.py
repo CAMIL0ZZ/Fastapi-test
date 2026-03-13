@@ -21,3 +21,12 @@ pokemons = [
 ]
 
 
+@app.get("/pokemon/{id}")
+def get_pokemon(id: int):
+
+    for p in pokemons:
+
+        if p.id == id:
+            return p
+
+    return {"error": "pokemon not found"}
